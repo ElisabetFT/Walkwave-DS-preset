@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecentSampler minVersion="1.0.0">
+  <ui bgImage="Images/walkwallpaper.jpg" width="815" height="375"
+      bgColor="00000000">
+    <tab name="main">
+
+        <label x="40" y="35" width="75" height="20" text="Send" textSize="16"textColor="FFFFFAE2"/>
+        <label x="40" y="65" width="75" height="20" text="Size" textSize="16"textColor="FFFFFAE2"/>
+
+        
+        <label x="550" y="30" width="75" height="20" text="Send" textSize="16" textColor="FFFFFAE2"/>
+        <label x="550" y="52" width="75" height="20" text="Time" textSize="16" textColor="FFFFFAE2"/>
+        <label x="550" y="75" width="75" height="20" text="Feedback" textSize="16" textColor="FFFFFAE2"/>
+
+        <label x="120" y="140" width="75" height="20" text="Filter" textSize="16" textColor="FFFFFAE2"/>
+
+        <label x="320" y="130" width="75" height="20" text="Attack" textSize="16" textColor="FFFFFAE2"/>
+        <label x="320" y="150" width="75" height="20" text="Release" textSize="16" textColor="FFFFFAE2"/>
+
+      <control x="120" y="40" style="linear_bar" width="120" height="12" trackForegroundColor="FF3B751C" trackBackgroundColor="66999999" valueType="float" minValue="0" maxValue="1" value="0.30" >
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_WET_LEVEL"/>
+      </control>
+      <control x="120" y="70" style="linear_bar" width="120" height="12" trackForegroundColor="FF3B751C" trackBackgroundColor="66999999" valueType="float" minValue="0" maxValue="1" value="0.30">
+        <binding type="effect" level="instrument" position="1" parameter="FX_REVERB_ROOM_SIZE"/>
+      </control>
+      <control x="630" y="35" style="linear_bar" width="120" height="12" trackForegroundColor="FFbe702b" trackBackgroundColor="66999999" valueType="float" minValue="0" maxValue="1" value="0.30" >
+        <binding type="effect" level="instrument" position="2" parameter="FX_WET_LEVEL"/>
+      </control>
+      <control x="630" y="58" style="linear_bar" width="120" height="12" trackForegroundColor="FFbe702b" trackBackgroundColor="66999999" valueType="float" minValue="0" maxValue="1" value="0">
+        <binding type="effect" level="instrument" position="2" parameter="FX_DELAY_TIME"/>
+      </control>
+      <control x="630" y="80" style="linear_bar" width="120" height="12" trackForegroundColor="FFbe702b" trackBackgroundColor="66999999" valueType="float" minValue="0" maxValue="1" value="0">
+        <binding type="effect" level="instrument" position="2" parameter="FX_FEEDBACK"/>
+      </control>
+      <control x="175" y="145" style="linear_bar" width="80" height="12" trackForegroundColor="FFEDE1D2" trackBackgroundColor="66999999" valueType="float" minValue="5000" maxValue="22000" value="22000">
+        <binding type="effect" level="instrument" position="0" parameter="FX_FILTER_FREQUENCY"/>
+      </control>
+      <control x="380" y="135" style="linear_bar" width="80" height="12" trackForegroundColor="FF66CC33" trackBackgroundColor="66999999" valueType="float" minValue="0.0" maxValue="1" value="0.0">
+        <binding type="amp" level="instrument" position="0" parameter="ENV_ATTACK"/>
+      </control>
+      <control x="380" y="155" style="linear_bar" width="80" height="12" trackForegroundColor="FF66CC33" trackBackgroundColor="66999999" valueType="float" minValue="-5" maxValue="20" value="0.5">
+        <binding type="amp" level="instrument" position="0" parameter="ENV_RELEASE"/>
+      </control>
+
+
+      <labeled-knob x="565" y="120" width="70" trackForegroundColor="FFFFFAE2" trackBackgroundColor="66666666" type="float" minValue="0" maxValue="1" value="0.4">
+        <binding type="amp" level="instrument" position="0" parameter="AMP_VOLUME" translation="linear" translationOutputMin="0" translationOutputMax="1"/>
+      </labeled-knob>
+
+
+    </tab>
+    <keyboard>
+            <color loNote="36" hiNote="43" color="FF383633" />  <!--Concrete&Dirt 5-->
+            <color loNote="45" hiNote="52" color="FF979695" /> <!--Concrete 5-->
+            <color loNote="53" hiNote="53" color="FF5B5A58" /> <!--Gravel 1-->
+            <color loNote="55" hiNote="62" color="FF6A2D12" /> <!--Dirt 5-->
+            <color loNote="64" hiNote="65" color="FFA85C1E" /> <!--Dirt&Gravel 2-->
+            <color loNote="67" hiNote="72" color="FFFF902C" /> <!--Leaves 4-->
+            <color loNote="74" hiNote="79" color="FF50A027" /> <!--Grass 4-->
+            <color loNote="81" hiNote="83" color="FF254910" /> <!--Mud 2-->
+            <color loNote="84" hiNote="84" color="FFFFB66E" /> <!--Sand 1-->
+            <color loNote="86" hiNote="93" color="FFC1C1C1" /> <!--Tile 5--> 
+            <color loNote="95" hiNote="101" color="FF442813" /> <!--Wood 5-->
+
+    </keyboard>
+  </ui>
+  <effects>
+    <effect type="lowpass" frequency="21997.80134274146" resonance="0.1000000014901161"/>
+    <effect type="reverb" wetLevel="0.0" roomSize="0.7499999832361937"/> 
+    <effect type="delay" wetLevel="0.0" delayTime="0.0" feedback="0.0"/>
+  </effects>
+  <midi>
+    <cc number="1">
+      <binding level="ui" type="control" position="2" parameter="value" translation="linear"
+               translationOutputMin="0" translationOutputMax="1"/>
+    </cc>
+  </midi>
+  <groups ampVelTrack="0.3" seqMode="random" attack="0.0" decay="1.0" sustain="1.0" release="0.5" volume="1.0">
+
+
+    <group name="RR1" seqPosition="1" seqLength="6" >
+<!--Concrete&Dirt 5-->
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Barefoot_Walk-001.wav" loNote="36" hiNote="36" rootNote="36"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Boots_Walk-001.wav" loNote="38" hiNote="38" rootNote="38"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Flipflops_Walk-001.wav" loNote="40" hiNote="40" rootNote="40"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Heels_Walk-001.wav" loNote="41" hiNote="41" rootNote="41"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Sneakers_Walk-001.wav" loNote="43" hiNote="43" rootNote="43"/>
+<!--Concrete 5-->
+      <sample path="Samples/Concrete/Walkwave_Concrete_Barefoot_Walk-001.wav" loNote="45" hiNote="45" rootNote="45"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Boots_Walk-001.wav" loNote="47" hiNote="47" rootNote="47"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Flipflops_Walk-001.wav" loNote="48" hiNote="48" rootNote="48"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Heels_Walk-001.wav" loNote="50" hiNote="50" rootNote="50"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Sneakers_Walk-001.wav" loNote="52" hiNote="52" rootNote="52"/>
+<!--Gravel 1-->
+      <sample path="Samples/Gravel/Walkwave_Gravel_Walk-001.wav" loNote="53" hiNote="53" rootNote="53"/>  
+ <!--Dirt 5-->
+      <sample path="Samples/Dirt/Walkwave_Dirt_Barefoot_Walk-001.wav" loNote="55" hiNote="55" rootNote="55"/> 
+      <sample path="Samples/Dirt/Walkwave_Dirt_Boots_Walk-001.wav" loNote="57" hiNote="57" rootNote="57"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Flipflops_Walk-001.wav" loNote="59" hiNote="59" rootNote="59"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Heels_Walk-001.wav" loNote="60" hiNote="60" rootNote="60"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Sneakers_Walk-001.wav" loNote="62" hiNote="62" rootNote="62"/>
+<!--Dirt&Gravel 2-->
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Boots_Walk-001.wav" loNote="64" hiNote="64" rootNote="64"/>
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Sneakers_Walk-001.wav" loNote="65" hiNote="65" rootNote="65"/>
+<!--Leaves 4-->
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Boots_Walk-001.wav" loNote="67" hiNote="67" rootNote="67"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Sneakers_Walk-001.wav" loNote="69" hiNote="69" rootNote="69"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Boots_Walk-001.wav" loNote="71" hiNote="71" rootNote="71"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Sneakers_Walk-001.wav" loNote="72" hiNote="72" rootNote="72"/>
+<!--Grass 4-->
+      <sample path="Samples/Grass/Walkwave_Grass1_Boots_Walk -001.wav" loNote="74" hiNote="74" rootNote="74"/>
+      <sample path="Samples/Grass/Walkwave_Grass1_Sneakers_Walk -001.wav" loNote="76" hiNote="76" rootNote="76"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Boots_Walk -001.wav" loNote="77" hiNote="77" rootNote="77"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Sneakers_Walk -001.wav" loNote="79" hiNote="79" rootNote="79"/>
+<!--Mud 2-->
+      <sample path="Samples/Mud/Walkwave_Mud_Walk-001.wav" loNote="81" hiNote="81" rootNote="81"/>
+      <sample path="Samples/Mud/Walkwave_Mud2_Walk -001.wav" loNote="83" hiNote="83" rootNote="83"/>
+<!--Sand 1-->
+      <sample path="Samples/Sand/Walkwave_Sand_Walk-001.wav" loNote="84" hiNote="84" rootNote="84"/>
+<!--Tile 5-->
+      <sample path="Samples/Tile/Walkwave_Tile_Barefoot_Walk-001.wav" loNote="86" hiNote="86" rootNote="86"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Boots_Walk-001.wav" loNote="88" hiNote="88" rootNote="88"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Flipflops_Walk-001.wav" loNote="89" hiNote="89" rootNote="89"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Heels_Walk-001.wav" loNote="91" hiNote="91" rootNote="91"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Sneakers_Walk-001.wav" loNote="93" hiNote="93" rootNote="93"/>
+<!--Wood 5-->
+      <sample path="Samples/Wood/Walkwave_Wood_Barefoot_Walk-001.wav" loNote="95" hiNote="95" rootNote="95"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Boots_Walk-001.wav" loNote="96" hiNote="96" rootNote="96"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Flipflops_Walk-001.wav" loNote="98" hiNote="98" rootNote="98"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Heels_Walk-001.wav" loNote="100" hiNote="100" rootNote="100"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Sneakers_Walk-001.wav" loNote="101" hiNote="101" rootNote="101"/>
+
+
+  </group>
+
+  <group name="RR2" seqPosition="2" seqLength="6" >
+
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Barefoot_Walk-002.wav" loNote="36" hiNote="36" rootNote="36"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Boots_Walk-002.wav" loNote="38" hiNote="38" rootNote="38"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Flipflops_Walk-002.wav" loNote="40" hiNote="40" rootNote="40"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Heels_Walk-002.wav" loNote="41" hiNote="41" rootNote="41"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Sneakers_Walk-002.wav" loNote="43" hiNote="43" rootNote="43"/>
+
+      <sample path="Samples/Concrete/Walkwave_Concrete_Barefoot_Walk-002.wav" loNote="45" hiNote="45" rootNote="45"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Boots_Walk-002.wav" loNote="47" hiNote="47" rootNote="47"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Flipflops_Walk-002.wav" loNote="48" hiNote="48" rootNote="48"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Heels_Walk-002.wav" loNote="50" hiNote="50" rootNote="50"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Sneakers_Walk-002.wav" loNote="52" hiNote="52" rootNote="52"/>
+
+      <sample path="Samples/Gravel/Walkwave_Gravel_Walk-002.wav" loNote="53" hiNote="53" rootNote="53"/>  
+
+      <sample path="Samples/Dirt/Walkwave_Dirt_Barefoot_Walk-002.wav" loNote="55" hiNote="55" rootNote="55"/> 
+      <sample path="Samples/Dirt/Walkwave_Dirt_Boots_Walk-002.wav" loNote="57" hiNote="57" rootNote="57"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Flipflops_Walk-002.wav" loNote="59" hiNote="59" rootNote="59"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Heels_Walk-002.wav" loNote="60" hiNote="60" rootNote="60"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Sneakers_Walk-002.wav" loNote="62" hiNote="62" rootNote="62"/>
+
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Boots_Walk-002.wav" loNote="64" hiNote="64" rootNote="64"/>
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Sneakers_Walk-002.wav" loNote="65" hiNote="65" rootNote="65"/>
+
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Boots_Walk-002.wav" loNote="67" hiNote="67" rootNote="67"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Sneakers_Walk-002.wav" loNote="69" hiNote="69" rootNote="69"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Boots_Walk-002.wav" loNote="71" hiNote="71" rootNote="71"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Sneakers_Walk-002.wav" loNote="72" hiNote="72" rootNote="72"/>
+
+      <sample path="Samples/Grass/Walkwave_Grass1_Boots_Walk -002.wav" loNote="74" hiNote="74" rootNote="74"/>
+      <sample path="Samples/Grass/Walkwave_Grass1_Sneakers_Walk -002.wav" loNote="76" hiNote="76" rootNote="76"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Boots_Walk -002.wav" loNote="77" hiNote="77" rootNote="77"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Sneakers_Walk -002.wav" loNote="79" hiNote="79" rootNote="79"/>
+
+      <sample path="Samples/Mud/Walkwave_Mud_Walk-002.wav" loNote="81" hiNote="81" rootNote="81"/>
+      <sample path="Samples/Mud/Walkwave_Mud2_Walk -002.wav" loNote="83" hiNote="83" rootNote="83"/>
+
+      <sample path="Samples/Sand/Walkwave_Sand_Walk-002.wav" loNote="84" hiNote="84" rootNote="84"/>
+
+      <sample path="Samples/Tile/Walkwave_Tile_Barefoot_Walk-002.wav" loNote="86" hiNote="86" rootNote="86"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Boots_Walk-002.wav" loNote="88" hiNote="88" rootNote="88"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Flipflops_Walk-002.wav" loNote="89" hiNote="89" rootNote="89"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Heels_Walk-002.wav" loNote="91" hiNote="91" rootNote="91"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Sneakers_Walk-002.wav" loNote="93" hiNote="93" rootNote="93"/>
+
+      <sample path="Samples/Wood/Walkwave_Wood_Barefoot_Walk-002.wav" loNote="95" hiNote="95" rootNote="95"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Boots_Walk-002.wav" loNote="96" hiNote="96" rootNote="96"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Flipflops_Walk-002.wav" loNote="98" hiNote="98" rootNote="98"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Heels_Walk-002.wav" loNote="100" hiNote="100" rootNote="100"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Sneakers_Walk-002.wav" loNote="101" hiNote="101" rootNote="101"/>
+
+
+  </group>
+
+  <group name="RR3" seqPosition="3" seqLength="6">
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Barefoot_Walk-003.wav" loNote="36" hiNote="36" rootNote="36"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Boots_Walk-003.wav" loNote="38" hiNote="38" rootNote="38"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Flipflops_Walk-003.wav" loNote="40" hiNote="40" rootNote="40"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Heels_Walk-003.wav" loNote="41" hiNote="41" rootNote="41"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Sneakers_Walk-003.wav" loNote="43" hiNote="43" rootNote="43"/>
+
+      <sample path="Samples/Concrete/Walkwave_Concrete_Barefoot_Walk-003.wav" loNote="45" hiNote="45" rootNote="45"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Boots_Walk-003.wav" loNote="47" hiNote="47" rootNote="47"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Flipflops_Walk-003.wav" loNote="48" hiNote="48" rootNote="48"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Heels_Walk-003.wav" loNote="50" hiNote="50" rootNote="50"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Sneakers_Walk-003.wav" loNote="52" hiNote="52" rootNote="52"/>
+
+      <sample path="Samples/Gravel/Walkwave_Gravel_Walk-003.wav" loNote="53" hiNote="53" rootNote="53"/>  
+
+      <sample path="Samples/Dirt/Walkwave_Dirt_Barefoot_Walk-003.wav" loNote="55" hiNote="55" rootNote="55"/> 
+      <sample path="Samples/Dirt/Walkwave_Dirt_Boots_Walk-003.wav" loNote="57" hiNote="57" rootNote="57"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Flipflops_Walk-003.wav" loNote="59" hiNote="59" rootNote="59"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Heels_Walk-003.wav" loNote="60" hiNote="60" rootNote="60"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Sneakers_Walk-003.wav" loNote="62" hiNote="62" rootNote="62"/>
+
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Boots_Walk-003.wav" loNote="64" hiNote="64" rootNote="64"/>
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Sneakers_Walk-003.wav" loNote="65" hiNote="65" rootNote="65"/>
+
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Boots_Walk-003.wav" loNote="67" hiNote="67" rootNote="67"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Sneakers_Walk-003.wav" loNote="69" hiNote="69" rootNote="69"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Boots_Walk-003.wav" loNote="71" hiNote="71" rootNote="71"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Sneakers_Walk-003.wav" loNote="72" hiNote="72" rootNote="72"/>
+
+      <sample path="Samples/Grass/Walkwave_Grass1_Boots_Walk -003.wav" loNote="74" hiNote="74" rootNote="74"/>
+      <sample path="Samples/Grass/Walkwave_Grass1_Sneakers_Walk -003.wav" loNote="76" hiNote="76" rootNote="76"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Boots_Walk -003.wav" loNote="77" hiNote="77" rootNote="77"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Sneakers_Walk -003.wav" loNote="79" hiNote="79" rootNote="79"/>
+
+      <sample path="Samples/Mud/Walkwave_Mud_Walk-003.wav" loNote="81" hiNote="81" rootNote="81"/>
+      <sample path="Samples/Mud/Walkwave_Mud2_Walk -003.wav" loNote="83" hiNote="83" rootNote="83"/>
+
+      <sample path="Samples/Sand/Walkwave_Sand_Walk-003.wav" loNote="84" hiNote="84" rootNote="84"/>
+
+      <sample path="Samples/Tile/Walkwave_Tile_Barefoot_Walk-003.wav" loNote="86" hiNote="86" rootNote="86"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Boots_Walk-003.wav" loNote="88" hiNote="88" rootNote="88"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Flipflops_Walk-003.wav" loNote="89" hiNote="89" rootNote="89"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Heels_Walk-003.wav" loNote="91" hiNote="91" rootNote="91"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Sneakers_Walk-003.wav" loNote="93" hiNote="93" rootNote="93"/>
+
+      <sample path="Samples/Wood/Walkwave_Wood_Barefoot_Walk-003.wav" loNote="95" hiNote="95" rootNote="95"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Boots_Walk-003.wav" loNote="96" hiNote="96" rootNote="96"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Flipflops_Walk-003.wav" loNote="98" hiNote="98" rootNote="98"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Heels_Walk-003.wav" loNote="100" hiNote="100" rootNote="100"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Sneakers_Walk-003.wav" loNote="101" hiNote="101" rootNote="101"/>
+  </group>
+
+  <group name="RR4" seqPosition="4" seqLength="6" >
+     <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Barefoot_Walk-004.wav" loNote="36" hiNote="36" rootNote="36"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Boots_Walk-004.wav" loNote="38" hiNote="38" rootNote="38"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Flipflops_Walk-004.wav" loNote="40" hiNote="40" rootNote="40"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Heels_Walk-004.wav" loNote="41" hiNote="41" rootNote="41"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Sneakers_Walk-004.wav" loNote="43" hiNote="43" rootNote="43"/>
+
+      <sample path="Samples/Concrete/Walkwave_Concrete_Barefoot_Walk-004.wav" loNote="45" hiNote="45" rootNote="45"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Boots_Walk-004.wav" loNote="47" hiNote="47" rootNote="47"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Flipflops_Walk-004.wav" loNote="48" hiNote="48" rootNote="48"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Heels_Walk-004.wav" loNote="50" hiNote="50" rootNote="50"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Sneakers_Walk-004.wav" loNote="52" hiNote="52" rootNote="52"/>
+
+      <sample path="Samples/Gravel/Walkwave_Gravel_Walk-004.wav" loNote="53" hiNote="53" rootNote="53"/>  
+
+      <sample path="Samples/Dirt/Walkwave_Dirt_Barefoot_Walk-004.wav" loNote="55" hiNote="55" rootNote="55"/> 
+      <sample path="Samples/Dirt/Walkwave_Dirt_Boots_Walk-004.wav" loNote="57" hiNote="57" rootNote="57"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Flipflops_Walk-004.wav" loNote="59" hiNote="59" rootNote="59"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Heels_Walk-004.wav" loNote="60" hiNote="60" rootNote="60"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Sneakers_Walk-004.wav" loNote="62" hiNote="62" rootNote="62"/>
+
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Boots_Walk-004.wav" loNote="64" hiNote="64" rootNote="64"/>
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Sneakers_Walk-004.wav" loNote="65" hiNote="65" rootNote="65"/>
+
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Boots_Walk-004.wav" loNote="67" hiNote="67" rootNote="67"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Sneakers_Walk-004.wav" loNote="69" hiNote="69" rootNote="69"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Boots_Walk-004.wav" loNote="71" hiNote="71" rootNote="71"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Sneakers_Walk-004.wav" loNote="72" hiNote="72" rootNote="72"/>
+
+      <sample path="Samples/Grass/Walkwave_Grass1_Boots_Walk -004.wav" loNote="74" hiNote="74" rootNote="74"/>
+      <sample path="Samples/Grass/Walkwave_Grass1_Sneakers_Walk -004.wav" loNote="76" hiNote="76" rootNote="76"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Boots_Walk -004.wav" loNote="77" hiNote="77" rootNote="77"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Sneakers_Walk -004.wav" loNote="79" hiNote="79" rootNote="79"/>
+
+      <sample path="Samples/Mud/Walkwave_Mud_Walk-004.wav" loNote="81" hiNote="81" rootNote="81"/>
+      <sample path="Samples/Mud/Walkwave_Mud2_Walk -004.wav" loNote="83" hiNote="83" rootNote="83"/>
+
+      <sample path="Samples/Sand/Walkwave_Sand_Walk-004.wav" loNote="84" hiNote="84" rootNote="84"/>
+
+      <sample path="Samples/Tile/Walkwave_Tile_Barefoot_Walk-004.wav" loNote="86" hiNote="86" rootNote="86"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Boots_Walk-004.wav" loNote="88" hiNote="88" rootNote="88"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Flipflops_Walk-004.wav" loNote="89" hiNote="89" rootNote="89"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Heels_Walk-004.wav" loNote="91" hiNote="91" rootNote="91"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Sneakers_Walk-004.wav" loNote="93" hiNote="93" rootNote="93"/>
+
+      <sample path="Samples/Wood/Walkwave_Wood_Barefoot_Walk-004.wav" loNote="95" hiNote="95" rootNote="95"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Boots_Walk-004.wav" loNote="96" hiNote="96" rootNote="96"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Flipflops_Walk-004.wav" loNote="98" hiNote="98" rootNote="98"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Heels_Walk-004.wav" loNote="100" hiNote="100" rootNote="100"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Sneakers_Walk-004.wav" loNote="101" hiNote="101" rootNote="101"/>
+  </group>
+
+  <group name="RR5" seqPosition="5" seqLength="6">
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Barefoot_Walk-005.wav" loNote="36" hiNote="36" rootNote="36"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Boots_Walk-005.wav" loNote="38" hiNote="38" rootNote="38"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Flipflops_Walk-005.wav" loNote="40" hiNote="40" rootNote="40"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Heels_Walk-005.wav" loNote="41" hiNote="41" rootNote="41"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Sneakers_Walk-005.wav" loNote="43" hiNote="43" rootNote="43"/>
+
+      <sample path="Samples/Concrete/Walkwave_Concrete_Barefoot_Walk-005.wav" loNote="45" hiNote="45" rootNote="45"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Boots_Walk-005.wav" loNote="47" hiNote="47" rootNote="47"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Flipflops_Walk-005.wav" loNote="48" hiNote="48" rootNote="48"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Heels_Walk-005.wav" loNote="50" hiNote="50" rootNote="50"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Sneakers_Walk-005.wav" loNote="52" hiNote="52" rootNote="52"/>
+
+      <sample path="Samples/Gravel/Walkwave_Gravel_Walk-005.wav" loNote="53" hiNote="53" rootNote="53"/>  
+
+      <sample path="Samples/Dirt/Walkwave_Dirt_Barefoot_Walk-005.wav" loNote="55" hiNote="55" rootNote="55"/> 
+      <sample path="Samples/Dirt/Walkwave_Dirt_Boots_Walk-005.wav" loNote="57" hiNote="57" rootNote="57"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Flipflops_Walk-005.wav" loNote="59" hiNote="59" rootNote="59"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Heels_Walk-005.wav" loNote="60" hiNote="60" rootNote="60"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Sneakers_Walk-005.wav" loNote="62" hiNote="62" rootNote="62"/>
+
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Boots_Walk-005.wav" loNote="64" hiNote="64" rootNote="64"/>
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Sneakers_Walk-005.wav" loNote="65" hiNote="65" rootNote="65"/>
+
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Boots_Walk-005.wav" loNote="67" hiNote="67" rootNote="67"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Sneakers_Walk-005.wav" loNote="69" hiNote="69" rootNote="69"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Boots_Walk-005.wav" loNote="71" hiNote="71" rootNote="71"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Sneakers_Walk-005.wav" loNote="72" hiNote="72" rootNote="72"/>
+
+      <sample path="Samples/Grass/Walkwave_Grass1_Boots_Walk -005.wav" loNote="74" hiNote="74" rootNote="74"/>
+      <sample path="Samples/Grass/Walkwave_Grass1_Sneakers_Walk -005.wav" loNote="76" hiNote="76" rootNote="76"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Boots_Walk -005.wav" loNote="77" hiNote="77" rootNote="77"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Sneakers_Walk -005.wav" loNote="79" hiNote="79" rootNote="79"/>
+
+      <sample path="Samples/Mud/Walkwave_Mud_Walk-005.wav" loNote="81" hiNote="81" rootNote="81"/>
+      <sample path="Samples/Mud/Walkwave_Mud2_Walk -005.wav" loNote="83" hiNote="83" rootNote="83"/>
+
+      <sample path="Samples/Sand/Walkwave_Sand_Walk-005.wav" loNote="84" hiNote="84" rootNote="84"/>
+
+      <sample path="Samples/Tile/Walkwave_Tile_Barefoot_Walk-005.wav" loNote="86" hiNote="86" rootNote="86"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Boots_Walk-005.wav" loNote="88" hiNote="88" rootNote="88"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Flipflops_Walk-005.wav" loNote="89" hiNote="89" rootNote="89"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Heels_Walk-005.wav" loNote="91" hiNote="91" rootNote="91"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Sneakers_Walk-005.wav" loNote="93" hiNote="93" rootNote="93"/>
+
+      <sample path="Samples/Wood/Walkwave_Wood_Barefoot_Walk-005.wav" loNote="95" hiNote="95" rootNote="95"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Boots_Walk-005.wav" loNote="96" hiNote="96" rootNote="96"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Flipflops_Walk-005.wav" loNote="98" hiNote="98" rootNote="98"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Heels_Walk-005.wav" loNote="100" hiNote="100" rootNote="100"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Sneakers_Walk-005.wav" loNote="101" hiNote="101" rootNote="101"/>
+
+    </group>
+
+  <group name="RR6" seqPosition="6" seqLength="6" >
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Barefoot_Walk-006.wav" loNote="36" hiNote="36" rootNote="36"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Boots_Walk-006.wav" loNote="38" hiNote="38" rootNote="38"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Flipflops_Walk-006.wav" loNote="40" hiNote="40" rootNote="40"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Heels_Walk-006.wav" loNote="41" hiNote="41" rootNote="41"/>
+      <sample path="Samples/Concrete and Dirt/Walkwave_ConcreteDirt_Sneakers_Walk-006.wav" loNote="43" hiNote="43" rootNote="43"/>
+
+      <sample path="Samples/Concrete/Walkwave_Concrete_Barefoot_Walk-006.wav" loNote="45" hiNote="45" rootNote="45"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Boots_Walk-006.wav" loNote="47" hiNote="47" rootNote="47"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Flipflops_Walk-006.wav" loNote="48" hiNote="48" rootNote="48"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Heels_Walk-006.wav" loNote="50" hiNote="50" rootNote="50"/>
+      <sample path="Samples/Concrete/Walkwave_Concrete_Sneakers_Walk-006.wav" loNote="52" hiNote="52" rootNote="52"/>
+
+      <sample path="Samples/Gravel/Walkwave_Gravel_Walk-006.wav" loNote="53" hiNote="53" rootNote="53"/>  
+
+      <sample path="Samples/Dirt/Walkwave_Dirt_Barefoot_Walk-006.wav" loNote="55" hiNote="55" rootNote="55"/> 
+      <sample path="Samples/Dirt/Walkwave_Dirt_Boots_Walk-006.wav" loNote="57" hiNote="57" rootNote="57"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Flipflops_Walk-006.wav" loNote="59" hiNote="59" rootNote="59"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Heels_Walk-006.wav" loNote="60" hiNote="60" rootNote="60"/>
+      <sample path="Samples/Dirt/Walkwave_Dirt_Sneakers_Walk-006.wav" loNote="62" hiNote="62" rootNote="62"/>
+
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Boots_Walk-006.wav" loNote="64" hiNote="64" rootNote="64"/>
+      <sample path="Samples/Dirt and Gravel/Walkwave_DirtGravel_Sneakers_Walk-006.wav" loNote="65" hiNote="65" rootNote="65"/>
+
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Boots_Walk-006.wav" loNote="67" hiNote="67" rootNote="67"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves1_Sneakers_Walk-006.wav" loNote="69" hiNote="69" rootNote="69"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Boots_Walk-006.wav" loNote="71" hiNote="71" rootNote="71"/>
+      <sample path="Samples/Leaves/Walkwave_Leaves2_Sneakers_Walk-006.wav" loNote="72" hiNote="72" rootNote="72"/>
+
+      <sample path="Samples/Grass/Walkwave_Grass1_Boots_Walk -006.wav" loNote="74" hiNote="74" rootNote="74"/>
+      <sample path="Samples/Grass/Walkwave_Grass1_Sneakers_Walk -006.wav" loNote="76" hiNote="76" rootNote="76"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Boots_Walk -006.wav" loNote="77" hiNote="77" rootNote="77"/>
+      <sample path="Samples/Grass/Walkwave_Grass2_Sneakers_Walk -006.wav" loNote="79" hiNote="79" rootNote="79"/>
+
+      <sample path="Samples/Mud/Walkwave_Mud_Walk-006.wav" loNote="81" hiNote="81" rootNote="81"/>
+      <sample path="Samples/Mud/Walkwave_Mud2_Walk -006.wav" loNote="83" hiNote="83" rootNote="83"/>
+
+      <sample path="Samples/Sand/Walkwave_Sand_Walk-006.wav" loNote="84" hiNote="84" rootNote="84"/>
+
+      <sample path="Samples/Tile/Walkwave_Tile_Barefoot_Walk-006.wav" loNote="86" hiNote="86" rootNote="86"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Boots_Walk-006.wav" loNote="88" hiNote="88" rootNote="88"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Flipflops_Walk-006.wav" loNote="89" hiNote="89" rootNote="89"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Heels_Walk-006.wav" loNote="91" hiNote="91" rootNote="91"/>
+      <sample path="Samples/Tile/Walkwave_Tile_Sneakers_Walk-006.wav" loNote="93" hiNote="93" rootNote="93"/>
+
+      <sample path="Samples/Wood/Walkwave_Wood_Barefoot_Walk-006.wav" loNote="95" hiNote="95" rootNote="95"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Boots_Walk-006.wav" loNote="96" hiNote="96" rootNote="96"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Flipflops_Walk-006.wav" loNote="98" hiNote="98" rootNote="98"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Heels_Walk-006.wav" loNote="100" hiNote="100" rootNote="100"/>
+      <sample path="Samples/Wood/Walkwave_Wood_Sneakers_Walk-006.wav" loNote="101" hiNote="101" rootNote="101"/>
+  </group>
+</groups>
+  <tags/>
+  <modulators/>
+  <noteSequences/>
+</DecentSampler>
